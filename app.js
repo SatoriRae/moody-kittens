@@ -3,6 +3,9 @@
  * @type {Kitten[]}
  */
 
+
+
+
 let kittens = [];
 /**
  * Called when submitting the new Kitten Form
@@ -56,9 +59,10 @@ function loadKittens() {
 function drawKittens() {
 let kittenListElement = document.getElementById("kitten-list")
 let kittenTemplate = ""
+
 kittens.forEach(kitten => {
   <div id="kittens" class="d-flex align-items-center flex-wrap">
- $(kitten.id)
+</div> $(kitten.id)
  $(kitten.name)
  $(kitten.url)
  $(kitten.mood)
@@ -88,7 +92,17 @@ function findKittenById(id) {
  * save the kittens
  * @param {string} id
  */
-function pet(id) {}
+
+function pet(id) {
+  let petRandom = Math.random
+  let chosenKitten = something
+  
+  if (petRandom > 0.7){
+    chosenKitten.affection += 1;
+  } else{
+    chosenKitten.affection -= 1;
+  }
+}
 
 /**
  * Find the kitten in the array of kittens
@@ -97,6 +111,7 @@ function pet(id) {}
  * save the kittens
  * @param {string} id
  */
+
 function catnip(id) {}
 
 /**
@@ -116,11 +131,15 @@ function getStarted() {
  * @typedef {{id: string, name: string, mood: string, affection: number}} Kitten
  */
 
+
+
+
 /**
  * Used to generate a random string id for mocked
  * database generated Id
  * @returns {string}
  */
+
 function generateId() {
   return (
     Math.floor(Math.random() * 10000000) +
