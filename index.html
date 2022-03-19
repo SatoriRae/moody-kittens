@@ -12,20 +12,21 @@
 </head>
 
 <body>
-
+<!-- this p-1 stays.. onsubmit to addKitten needs to work -->
   <header class="bg-dark d-flex align-items-center p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class="" onsubmit="addKitten(event)">
       <div class="d-flex">
-        <input placeholder="Cats name" type="text" name="name" required />
+        <input placeholder="Kitten's Name" type="text" name="name" required />
         <button class="btn-special" type="submit">
           /ᐠ｡ꞈ｡ᐟ\
         </button>
       </div>
     </form>
   </header>
-  <!-- main class welcome image hidden -->
-  <main class="container" hidden >
+
+  <!-- main class welcome needs to toggle/hidden -->
+  <main class="container" >
     <div id="welcome" class="d-flex justify-content-center">
       <div class="card p-2 text-center w-100">
         <!-- w-50 was origional -->
@@ -33,19 +34,19 @@
         <div class="mt-2">
 
           <b class="text-center">We are the Moody Kittens.</b>
-          <!-- switch from creating a div instead of just a p-->
           <div class="intro">
             <p>We are cool. We have style. We are loved by the internet the world-over and with the a push of the
               button... you can see us "live" *purrs* </p>
 
-            <p>Enter the name of your dream kitten in the right hand corner and click add!
+            <p> Play this game by creating and interacting with your Kitten. Give it attention or treats to see how it's mood changes.   
             </p>
           </div>
-          <small>Let's get this party started!</small>
+          <small>Start the game and add your Kitten's name</small>
           <br>
+          <!-- This game-start needs to be wired up... needs to hide -->
           <button onclick="getStarted()" class = "gs">Start Game</button>
           <p></p>
-           <button id="reset" onclick="resetGame()" class ="ck hidden">Delete Progress</button>
+           <button id="reset" onclick="resetGame()" class ="ck hidden">Delete Progress</button> 
          </div>
        </div>
      </div>
@@ -60,12 +61,8 @@
   </div>
 
   <div class="card bg-dark text-light p-2 w-10">
-    <div id="kittens" class="d-flex align-items-center flex-wrap w-10">
-      <img id="kitten" class="card" src="https://robohash.org/<CATNAMEHERE>?set=set4"> 
-      <alt="kitten">
-        </alt></img>
-    
-     
+    <div id="kitten-list" class="d-flex align-items-center flex-wrap w-10">
+        
       </div>
     <form class="card width-10">
       <label for="name"> Name: </label>
@@ -83,7 +80,7 @@
     <button onClickpet:>Pet</button>
     <button onClickcatnip:>Catnip </button>
   </form>
-
+-->
     <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
       <small>Created with <span style="color: var(--primary)">&hearts;</span> by Codeworks & Satori</small>
     </footer>

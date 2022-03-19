@@ -7,6 +7,7 @@
 
 
 let kittens = [];
+
 /**
  * Called when submitting the new Kitten Form
  * This method will pull data from the form
@@ -19,16 +20,24 @@ let kittens = [];
 function addKitten(event) {
   event.preventDefault()
   let form = event.target
+
+  let kitten = {
+    id: generateId(),
+    //image: 
+    name:form.name.value,
+    mood: "Tolerant",
+    affection: 5,
+  }
+
+  kittens.push(kitten)
+  saveKittens()
+  form.reset()
+
+
 }
 // addKitten name from form not being saved :(
 
-let kitten = {
-  id: generateId(),
-  //image: 
-  name:form.name.value,
-  mood: "Tolerant",
-  affection: 5,
-}
+
 
 function generateId() {
   return (
@@ -38,9 +47,7 @@ function generateId() {
   );
 }
 
-kittens.push(kitten)
-saveKittens()
-form.reset()
+
 /**
  * Converts the kittens array to a JSON string then
  * Saves the string to localstorage at the key kittens
@@ -68,6 +75,8 @@ function loadKittens() {
  */
 function drawKittens() {
 let kittenListElement = document.getElementById("kitten-list")
+
+
 let kittenTemplate = ""
 
    kittens.forEach(kitten => {
@@ -86,12 +95,10 @@ let kittenTemplate = ""
      <button onclick="catnip('')"></button>
      </div>
      `
-
-
+   
+     kittenListElement.innerHTML = kittenTemplate; 
+console.log (kittenTemplate)
 })
-
-kittenListElement.innerHTML = kittenTemplate{
-  console.log("template card added/deleted")
 }
 
 /**
@@ -114,8 +121,7 @@ function findKittenById(id) {
  */
 
 function pet(id) {
-  let petRandom = Math.random
-  let chosenKitten = 
+  let petRandom = Math.random()
   
   if (petRandom > 0.7){
     kitten.affection += 1;
@@ -135,11 +141,12 @@ function pet(id) {
  */
 
 
-findKitten
+//findKitten() {
+//findKitten    
+//}
+
 // search through kittens[] then when kitten = kitten id
   
-
-kitten  => kitten.id == kitten 
 
 /**
  * Sets the kittens mood based on its affection
@@ -166,9 +173,9 @@ function setKittenMood(kitten) {
 
 function getStarted() {
   document.getElementById("welcome").remove();
-  drawKittens();
   document.getElementById("kittens").classList.remove("hidden");
-
+  
+}
 
 /**
  * Defines the Properties of a Kitten
@@ -183,4 +190,3 @@ function getStarted() {
  * database generated Id
  * @returns {string}
  */
-
