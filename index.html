@@ -5,64 +5,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Moody Kittens | CodeWorks</title>
+  <title>Moody Kittens /ᐠ｡ꞈ｡ᐟ\ CodeWorks</title>
   <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <header class="bg-dark d-flex align-items-center p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class="" onsubmit="addKitten(event)">
       <div class="d-flex">
-        <input placeholder="Name" type="text" name="name" />
+        <input placeholder="Cats name" type="text" name="name" required />
         <button class="btn-special" type="submit">
           /ᐠ｡ꞈ｡ᐟ\
         </button>
       </div>
     </form>
   </header>
-
-  <main class="container">
+  <!-- main class welcome image hidden -->
+  <main class="container" hidden >
     <div id="welcome" class="d-flex justify-content-center">
       <div class="card p-2 text-center w-100">
         <!-- w-50 was origional -->
         <img src="moody-logo.png" height="250" alt="Moody Kittens">
         <div class="mt-2">
-          
+
           <b class="text-center">We are the Moody Kittens.</b>
-            <!-- switch from creating a div instead of just a p-->
+          <!-- switch from creating a div instead of just a p-->
           <div class="intro">
-            <p>We are cool. We have style. We are loved by the internet the world-over and with the a push of the button... you can see us "live"   *purrs* </p>
-            
-           <p>Enter the name of your dream kitten in the right hand corner and click add! 
-        </p>
+            <p>We are cool. We have style. We are loved by the internet the world-over and with the a push of the
+              button... you can see us "live" *purrs* </p>
+
+            <p>Enter the name of your dream kitten in the right hand corner and click add!
+            </p>
           </div>
           <small>Let's get this party started!</small>
           <br>
-          <button onclick="getStarted()">Get Started</button>
+          <button onclick="getStarted()" class = "gs">Start Game</button>
+          <p></p>
+           <button id="reset" onclick="resetGame()" class ="ck hidden">Delete Progress</button>
+         </div>
+       </div>
+     </div>
+     <div class="part-2">
+      <div id="kittens" class="hidden d-flex align-items-center flex-wrap">
+      </div>
+       <!-- Get Started button not functional *yet* -->
         </div>
       </div>
-    </main> 
-
-    <div class="p-2">
-      <div id="kittens" class="d-flex align-items-center flex-wrap">
-        <img id="kitten" class="card" src="https://robohash.org/<CATNAMEHERE>?set=set4"> <alt="kitten"></alt></img>
-      
-      
-        </div>
-    
-    
-
   </main>
- 
+  <!-- Above hidden -->
+  </div>
 
-  <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
-    <small>Created with <span style="color: var(--primary)">&hearts;</span> by Satori</small>
-  </footer>
+  <div class="card bg-dark text-light p-2 w-10">
+    <div id="kittens" class="d-flex align-items-center flex-wrap w-10">
+      <img id="kitten" class="card" src="https://robohash.org/<CATNAMEHERE>?set=set4"> 
+      <alt="kitten">
+        </alt></img>
+    
+     
+      </div>
+    <form class="card width-10">
+      <label for="name"> Name: </label>
+      <input type="text" name="name">
+    </div>
+    <div>
+      <label for="mood"> Mood: </label>
+      <input type="text" name="mood">
+    </div>
+    <div>
+      <label for="affection"> Affection: </label>
+      <input type="text" name="affection">
+    </div>
+    </main>
+    <button onClickpet:>Pet</button>
+    <button onClickcatnip:>Catnip </button>
+  </form>
 
-  <script src="app.js"></script>
+    <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
+      <small>Created with <span style="color: var(--primary)">&hearts;</span> by Codeworks & Satori</small>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

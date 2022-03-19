@@ -20,12 +20,22 @@ function addKitten(event) {
   event.preventDefault()
   let form = event.target
 }
+// addKitten name from form not being saved :(
 
 let kitten = {
   id: generateId(),
-  name: form.name.value,
-  mood: "",
-  affection: "",
+  //image: 
+  name:form.name.value,
+  mood: "Tolerant",
+  affection: 5,
+}
+
+function generateId() {
+  return (
+    Math.floor(Math.random() * 10000000) +
+    "-" +
+    Math.floor(Math.random() * 10000000)
+  );
 }
 
 kittens.push(kitten)
@@ -60,13 +70,23 @@ function drawKittens() {
 let kittenListElement = document.getElementById("kitten-list")
 let kittenTemplate = ""
 
-kittens.forEach(kitten => {
-  <div id="kittens" class="d-flex align-items-center flex-wrap">
-</div> $(kitten.id)
- $(kitten.name)
- $(kitten.url)
- $(kitten.mood)
- $(kitten.affection)
+   kittens.forEach(kitten => {
+     kittenTemplate += `
+     <div id ="kitten" class="card kitten}" >
+     <center>
+     <img class="kitten" src="https://www.robohash.org/set_set4/${kitten.name}" height="90" width="90" >
+     </center> 
+     <p class="d-flex justify-content-left">Id: ${kitten.id}</p> 
+     <p class="d-flex justify-content-left">Name: ${kitten.name}</p>
+     <p class="d-flex justify-content-left">Mood: ${kitten.mood}</p>
+     <p class="d-flex justify-content-left">Affection: ${kitten.affection}</p>
+     
+     <button class = "ck" onclick="pet('')">Pet Cat</button>
+     <p></p>
+     <button onclick="catnip('')"></button>
+     </div>
+     `
+
 
 })
 
@@ -95,14 +115,16 @@ function findKittenById(id) {
 
 function pet(id) {
   let petRandom = Math.random
-  let chosenKitten = something
+  let chosenKitten = 
   
   if (petRandom > 0.7){
-    chosenKitten.affection += 1;
+    kitten.affection += 1;
   } else{
-    chosenKitten.affection -= 1;
+    kitten.affection -= 1;
   }
 }
+
+
 
 /**
  * Find the kitten in the array of kittens
@@ -112,19 +134,41 @@ function pet(id) {
  * @param {string} id
  */
 
-function catnip(id) {}
+
+findKitten
+// search through kittens[] then when kitten = kitten id
+  
+
+kitten  => kitten.id == kitten 
 
 /**
  * Sets the kittens mood based on its affection
  * Happy > 6, Tolerant <= 5, Angry <= 3, Gone <= 0
  * @param {Kitten} kitten
  */
-function setKittenMood(kitten) {}
+function setKittenMood(kitten) {
+  if (kitten.affection >=7 ){
+  kitten.mood = "happy"
+  } 
+  if (kitten.affection <= 5){
+  kitten.mood = "tolerant"
+}
+  if (kitten.affection <=3 ){
+    kitten.mood = "angry"
+  }
+  if (kitten.affection <= 0){
+    kitten.mood = "gone"
+  }
+  saveKittens()
+}
+
+
 
 function getStarted() {
   document.getElementById("welcome").remove();
   drawKittens();
-}
+  document.getElementById("kittens").classList.remove("hidden");
+
 
 /**
  * Defines the Properties of a Kitten
@@ -140,10 +184,3 @@ function getStarted() {
  * @returns {string}
  */
 
-function generateId() {
-  return (
-    Math.floor(Math.random() * 10000000) +
-    "-" +
-    Math.floor(Math.random() * 10000000)
-  );
-}
